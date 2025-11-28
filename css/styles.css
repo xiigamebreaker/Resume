@@ -1,0 +1,280 @@
+/* Noah Amman
+   Date: 11/27/2025
+   Assignment: Resume
+   Course: Web Development 130-101 */
+
+
+body {
+    font-family: Arial, sans-serif;
+    /* Set a clean, modern font */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    background-color: #EEEEEE;
+    /* Light background color */
+    color: #333333;
+    /* Dark text color for readability */
+}
+
+.top-bar {
+    position: sticky;
+    /* make this block stick */
+    top: 0;
+    /* stick to the very top of the viewport */
+    z-index: 1000;
+    /* stay above the page content */
+    background-color: #343434;
+    /* solid background behind header + menu */
+}
+
+
+header {
+    background-color: #343434;
+    /* Dark background for header */
+    color: white;
+    /* White text color */
+    padding: 8px 10px;
+    /* Padding around header */
+    text-align: center;
+    /* Centered text */
+}
+
+h1 {
+    font-size: 2.5em;
+    /* Larger font size for main heading */
+    font-weight: bold;
+    /* Make the main heading bold */
+    line-height: 1.2;
+    /* Adjust line height for better spacing */
+    margin: 0;
+    /* Remove default margin */
+}
+
+/* ----------------------------------------------------------------------
+   Navigation / Menu styles
+   - Styles here control the mobile-first menu and the checkbox toggle
+   ---------------------------------------------------------------------- */
+.menu {
+    list-style: none;
+    /* remove default bullets */
+    padding: 0;
+    /* remove default padding on the list */
+}
+
+/* Individual menu items: padding and light border for touch targets */
+.menu li {
+    margin: 5px 0;
+    /* space between items */
+    padding: 8px;
+    /* clickable area */
+    border: 4px solid #333333;
+    /* light outline for separation */
+    border-radius: 5px;
+    /* rounded corners for each item */
+}
+
+/* Links inside menu items should look like buttons */
+.menu li a {
+    text-decoration: none;
+    /* remove underline */
+    color: #333333;
+    /* match site accent color */
+    display: block;
+    /* make the link fill the list item */
+    text-align: center;
+    /* center the link text */
+    font-weight: bold;
+    /* bold text for emphasis */
+    border: #333333 2px solid;
+    /* border around link */
+    padding: 8px;
+    /* padding inside the link */
+    border-radius: 3px;
+    /* rounded corners for link */
+    background-color: #EEEEEE;
+    /* light background for link */
+}
+
+.menu li a:hover {
+    background-color: teal;
+    /* light hover effect */
+}
+
+/* Mobile menu icon (hamburger) styling */
+.menu-icon {
+    position: fixed;
+    top: 3px;
+    /* small offset from top */
+    left: 10px;
+    /* small offset from left */
+    font-size: 2em;
+    /* visually large touch target */
+    cursor: pointer;
+    /* indicate clickability */
+    color: teal;
+    /* light color for visibility */
+    z-index: 1100;
+}
+
+/* By default, the navigation is hidden on narrow screens; shown through the
+   checkbox hack when #menu-check is checked. This keeps the markup simple.
+*/
+nav {
+    display: none;
+    /* hide nav by default on mobile */
+    position: fixed;
+    /* fix position on screen */
+    top: 55px;
+    /* position below header */
+    left: 0;
+    /* align to left */
+    right: 0;
+    /* align to right */
+    border-radius: 3px;
+    /* rounded corners */
+    background-color: #343434;
+    /* solid background behind menu */
+    z-index: 1000;
+    /* stay above the page content */
+}
+
+/* When the hidden checkbox is checked, show the navigation (mobile toggle) */
+#menu-check:checked~nav {
+    display: block;
+}
+
+/* Hide the checkbox element visually but keep it accessible for the toggle */
+#menu-check {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    /* Centered subheadings */
+    font-size: 1.8em;
+    /* Font size for subheadings */
+    color: #444444;
+    /* Slightly lighter color for subheadings */
+    border-bottom: 2px solid #CCCCCC;
+    /* Underline for subheadings */
+    padding-bottom: 5px;
+    /* Padding below the underline */
+}
+
+section {
+    scroll-margin-top: 90px;
+    /* offset for sticky header */
+    text-align: center;
+    /* Centered text in sections */
+    margin: 20px;
+    /* Margin around sections */
+    padding: 15px;
+    /* Padding inside sections */
+    background-color: #FFFFFF;
+    /* White background for sections */
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.center-list {
+    list-style-position: inside;
+    /* bullets inside the box */
+    padding-left: 0;
+    /* remove default padding */
+    margin: 0 auto;
+    /* center the UL itself */
+    display: inline-block;
+    /* make the UL shrink to fit */
+    text-align: left;
+    /* bullets + text left-aligned inside */
+}
+
+#projects a {
+    color: teal;
+    /* link color for project links */
+    text-decoration: none;
+    /* remove underline */
+    font-weight: bold;
+    /* bold text for emphasis */
+}
+
+#projects a:hover {
+    text-decoration: underline;
+    /* underline on hover */
+    color: #99d5c9;
+    /* lighter teal on hover */
+}
+
+#contact a {
+    color: teal;
+    /* link color for contact links */
+    text-decoration: none;
+    /* remove underline */
+    font-weight: bold;
+    /* bold text for emphasis */
+}
+
+#contact a:hover {
+    text-decoration: underline;
+    /* underline on hover */
+    color: #99d5c9;
+    /* lighter teal on hover */
+}
+
+@media (min-width: 576px) {
+
+    /* On wider screens, show the nav bar horizontally */
+    nav {
+        display: block;
+        /* override mobile hide */
+        position: sticky;
+        /* make this block stick */
+        top: 0;
+        /* stick to the very top of the viewport */
+        z-index: 1000;
+        /* stay above the page content */
+        background-color: #343434;
+        /* solid background behind header + menu */
+    }
+
+    .menu {
+        display: flex;
+        /* horizontal layout */
+        justify-content: center;
+        /* center the menu */
+        gap: 15px;
+        /* space between items */
+    }
+
+    .menu li {
+        border: none;
+        /* remove borders for horizontal layout */
+        padding: 5px 10px;
+        /* adjust padding for horizontal layout */
+    }
+
+    .menu-icon,
+    #menu-check {
+        display: none;
+        /* hide mobile menu elements */
+    }
+}
+
+@media (min-width: 720px) {
+    section {
+        margin: 40px auto;
+        /* increase margin on larger screens */
+        max-width: 800px;
+        /* limit width for readability */
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        font-size: 18px;
+        /* increase base font size on large screens */
+    }
+}
